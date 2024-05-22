@@ -42,8 +42,6 @@ function App() {
     setTodos(newTodos);
   };
 
-  const sortedTodos = [...todos].sort((a, b) => a.time.localeCompare(b.time));
-
   return (
     <div className="outer">
       <h1>ToDo App</h1>
@@ -66,7 +64,7 @@ function App() {
           </button>
         </div>
         <div className="list">
-          {sortedTodos.map((todo, index) => (
+          {todos.map((todo, index) => (
             <div
               key={index}
               className={`todo-item ${todo.completed ? 'completed' : ''}`}
@@ -90,3 +88,4 @@ function App() {
 }
 
 export default App;
+
